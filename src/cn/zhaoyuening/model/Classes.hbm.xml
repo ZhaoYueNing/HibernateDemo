@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.zhaoyuening.model">
+	<class name="Classes" table="t_classes" >
+		<id name="name" >
+			<generator class="assigned"/>
+		</id>
+		<set name="students" inverse="false" cascade="save-update">
+			<key column="classes_name"></key>
+			<one-to-many class="Student" ></one-to-many>
+		</set>
+	</class>
+	
+	
+</hibernate-mapping>
